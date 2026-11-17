@@ -39,3 +39,4 @@ dist/
 *.tar.gz
 *.tgz
 *.zip
+bun.lock

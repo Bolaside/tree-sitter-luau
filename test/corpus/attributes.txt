@@ -1,0 +1,100 @@
+=====
+Attribute parameter forms
+=====
+
+@native
+function a() end
+
+@[native]
+function b() end
+
+@[native()]
+function c() end
+
+@[deprecated "use replacement()"]
+function d() end
+
+@[deprecated("use replacement()")]
+function e() end
+
+@[deprecated { use = "replacement()", reason = "legacy" }]
+function f() end
+
+@[deprecated, native]
+function g() end
+
+---
+
+(chunk
+  (function_declaration
+    (attributes
+      (attribute
+        (identifier)))
+    (identifier)
+    (parameters))
+  (function_declaration
+    (attributes
+      (attribute
+        (parameter_attribute
+          (identifier))))
+    (identifier)
+    (parameters))
+  (function_declaration
+    (attributes
+      (attribute
+        (parameter_attribute
+          (identifier)
+          (attribute_parameters))))
+    (identifier)
+    (parameters))
+  (function_declaration
+    (attributes
+      (attribute
+        (parameter_attribute
+          (identifier)
+          (attribute_parameters
+            (string
+              (string_content))))))
+    (identifier)
+    (parameters))
+  (function_declaration
+    (attributes
+      (attribute
+        (parameter_attribute
+          (identifier)
+          (attribute_parameters
+            (literal_list
+              (literal
+                (string
+                  (string_content))))))))
+    (identifier)
+    (parameters))
+  (function_declaration
+    (attributes
+      (attribute
+        (parameter_attribute
+          (identifier)
+          (attribute_parameters
+            (literal_table
+              (literal_field_list
+                (literal_field
+                  (field_identifier)
+                  (literal
+                    (string
+                      (string_content))))
+                (literal_field
+                  (field_identifier)
+                  (literal
+                    (string
+                      (string_content))))))))))
+    (identifier)
+    (parameters))
+  (function_declaration
+    (attributes
+      (attribute
+        (parameter_attribute
+          (identifier))
+        (parameter_attribute
+          (identifier))))
+    (identifier)
+    (parameters)))

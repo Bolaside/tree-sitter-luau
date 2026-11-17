@@ -207,25 +207,17 @@ module.exports = grammar(lua, {
     _prefix_explicit_type_parameter_instantiation: ($) =>
       seq(
         field("function", $._prefix_expression),
-        //"<<",
-        "<",
-        "<",
+        "<<",
         $.type_parameters,
-        ">",
-        ">",
-        //">>",
+        ">>",
       ),
 
     _method_explicit_type_parameter_instantiation: ($) =>
       seq(
         field("method", $.method_index_expression),
-        //"<<",
-        "<",
-        "<",
+        "<<",
         $.type_parameters,
-        ">",
-        ">",
-        //">>",
+        ">>",
       ),
 
     // prefixexp . NAME

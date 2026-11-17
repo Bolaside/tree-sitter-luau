@@ -1,0 +1,187 @@
+=====
+Less-than comparison
+=====
+
+local a, b = 1, 2
+local x = a < b
+
+---
+
+(chunk
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier))
+      (binding
+        (identifier)))
+    (expression_list
+      (number)
+      (number)))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier)))))
+
+=====
+Less-than without spaces
+=====
+
+local a, b = 1, 2
+local x = a<b
+
+---
+
+(chunk
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier))
+      (binding
+        (identifier)))
+    (expression_list
+      (number)
+      (number)))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier)))))
+
+=====
+Less-than in conditions
+=====
+
+local a = 1
+if a < 10 then
+end
+while a < 10 do
+end
+
+---
+
+(chunk
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (number)))
+  (if_statement
+    (binary_expression
+      (identifier)
+      (number)))
+  (while_statement
+    (binary_expression
+      (identifier)
+      (number))))
+
+=====
+Comparison operators stay distinct
+=====
+
+local a, b = 1, 2
+local lt = a < b
+local le = a <= b
+local gt = a > b
+local ge = a >= b
+
+---
+
+(chunk
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier))
+      (binding
+        (identifier)))
+    (expression_list
+      (number)
+      (number)))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier))))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier))))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier))))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier)))))
+
+=====
+Explicit type parameter instantiation next to comparisons
+=====
+
+local a, b = 1, 2
+local x = a < b
+foo<<P, Q>>(p, q)
+local y = a < b
+
+---
+
+(chunk
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier))
+      (binding
+        (identifier)))
+    (expression_list
+      (number)
+      (number)))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier))))
+  (function_call
+    (explicit_type_parameter_instantiation
+      (identifier)
+      (type_parameters
+        (type_reference
+          (type_identifier))
+        (type_reference
+          (type_identifier))))
+    (arguments
+      (identifier)
+      (identifier)))
+  (local_variable_declaration
+    (binding_list
+      (binding
+        (identifier)))
+    (expression_list
+      (binary_expression
+        (identifier)
+        (identifier)))))

@@ -3187,11 +3187,7 @@
         },
         {
           "type": "STRING",
-          "value": "<"
-        },
-        {
-          "type": "STRING",
-          "value": "<"
+          "value": "<<"
         },
         {
           "type": "SYMBOL",
@@ -3199,11 +3195,7 @@
         },
         {
           "type": "STRING",
-          "value": ">"
-        },
-        {
-          "type": "STRING",
-          "value": ">"
+          "value": ">>"
         }
       ]
     },
@@ -3220,11 +3212,7 @@
         },
         {
           "type": "STRING",
-          "value": "<"
-        },
-        {
-          "type": "STRING",
-          "value": "<"
+          "value": "<<"
         },
         {
           "type": "SYMBOL",
@@ -3232,11 +3220,7 @@
         },
         {
           "type": "STRING",
-          "value": ">"
-        },
-        {
-          "type": "STRING",
-          "value": ">"
+          "value": ">>"
         }
       ]
     },
@@ -6126,6 +6110,5 @@
     "type",
     "inner_type",
     "variable"
-  ],
-  "reserved": {}
+  ]
 }
